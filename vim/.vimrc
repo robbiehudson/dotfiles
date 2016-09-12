@@ -15,15 +15,14 @@ call vundle#begin()
   Plugin 'tpope/vim-rails'
   Plugin 'rking/ag.vim'
   Plugin 'bogado/file-line'
+  Plugin 'rking/pry-de'
+  Plugin 'ngmy/vim-rubocop'
+  Plugin 'elixir-lang/vim-elixir'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
 
 imap jj <Esc>
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
 
 " Whitespace
 set tabstop=2 shiftwidth=2 expandtab
@@ -100,9 +99,13 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-color codeschool
+color elflord
 :set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
 :set number
+
+" Set a nasty color at 80 chars
+:set textwidth=80
+:set colorcolumn=+1
 
 " RSpec.vim mappings
 :let mapleader = ","
@@ -113,6 +116,9 @@ map <Leader>a :w<CR>:call RunAllSpecs()<CR>
 
 " Remove trailing waite spaces
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Show whitespace
+:set list
 
 " Configure vim tree
 let g:netrw_liststyle=3
@@ -129,4 +135,4 @@ hi CursorLine  term=underline  guibg=#555555  cterm=underline ctermbg=0
 " Add spellchek
 " Move to next misspelled word s] Move backwards ]s
 " Show suggestions z=
-set spell spelllang=en_gb
+" set spell spelllang=en_gb
