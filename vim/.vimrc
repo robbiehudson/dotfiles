@@ -18,6 +18,7 @@ call vundle#begin()
   Plugin 'rking/pry-de'
   Plugin 'ngmy/vim-rubocop'
   Plugin 'elixir-lang/vim-elixir'
+  Plugin 'ecomba/vim-ruby-refactoring'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -62,6 +63,8 @@ if &t_Co > 2 || has("gui_running")
   nnoremap <F3> :set hlsearch!<CR>
 endif
 
+" add jbuilder syntax highlighting
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -113,6 +116,17 @@ map <Leader>t :w<CR>:call RunCurrentSpecFile()<CR>
 map <Leader>s :w<CR>:call RunNearestSpec()<CR>
 map <Leader>l :w<CR>:call RunLastSpec()<CR>
 map <Leader>a :w<CR>:call RunAllSpecs()<CR>
+
+" Refactoring mappings
+:nnoremap <leader>rap  :RAddParameter<cr>
+:nnoremap <leader>rcpc :RConvertPostConditional<cr>
+:nnoremap <leader>rel  :RExtractLet<cr>
+:vnoremap <leader>rec  :RExtractConstant<cr>
+:vnoremap <leader>relv :RExtractLocalVariable<cr>
+:nnoremap <leader>rit  :RInlineTemp<cr>
+:vnoremap <leader>rrlv :RRenameLocalVariable<cr>
+:vnoremap <leader>rriv :RRenameInstanceVariable<cr>
+:vnoremap <leader>rem  :RExtractMethod<cr>
 
 " Remove trailing waite spaces
 autocmd BufWritePre * :%s/\s\+$//e
