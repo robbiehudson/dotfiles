@@ -14,7 +14,7 @@ My configuration files for *nix machines(Mac OS X, Linux)
 Clone the repository:
 
 ```sh
-$ git clone --recursive https://github.com/pvcarrera/dotfiles.git
+$ git clone --recursive https://github.com/robbiehudson/dotfiles.git
 ```
 
 Use stow to sym link the conf files you need
@@ -45,4 +45,5 @@ $ stow --delete bash
 ## Authors
 
 - Pablo Vicente
+- Rob Hudson
 
