@@ -19,6 +19,8 @@ call vundle#begin()
   Plugin 'ngmy/vim-rubocop'
   Plugin 'elixir-lang/vim-elixir'
   Plugin 'ecomba/vim-ruby-refactoring'
+  Plugin 'yuezk/vim-js'
+  Plugin 'maxmellon/vim-jsx-pretty'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
