@@ -1,6 +1,6 @@
 [user]
-	email = vicapa99@gmail.com
-	name = Pablo Vicente
+	email = rob.hudson@gmail.com
+  name = Rob Hudson
 [alias]
 	st = status
 	aa = add .
@@ -12,7 +12,7 @@
 [format]
 	pretty = format:%C(blue black bold)%h%Creset %C(green bold)%s%Creset%C(yellow)%d%Creset [%C(cyan)%an%Creset] - %C(blue)%ar
 [core]
-	excludesfile = /Users/pvcarrera/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	editor = /usr/bin/vim
 [help]
