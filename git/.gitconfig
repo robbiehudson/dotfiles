@@ -22,7 +22,7 @@
 [push]
 	default = simple
 [merge]
-	ff = only
+	ff = false
 [rebase]
 	autosquash = true
 [rerere]
